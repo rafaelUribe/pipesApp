@@ -11,7 +11,9 @@
             legend="i18nSelect Pipe"
             [toggleable]="true"
         >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores cupiditate quisquam, dolore totam ab animi voluptas officiis voluptate velit aut, sint dolores ad placeat corrupti odit doloremque cum nobis fugiat.
+            Saludos {{ nombre }}, es un placer 
+            {{ genero | i18nSelect:invitacionMapa }}
+            a nuestro evento.
         </p-fieldset>
     </div>
     <div class="col-12 md:col-6 sm:col-9">
@@ -19,7 +21,7 @@
             legend="18nPlural Pipe"
             [toggleable]="true"
         >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores cupiditate quisquam, dolore totam ab animi voluptas officiis voluptate velit aut, sint dolores ad placeat corrupti odit doloremque cum nobis fugiat.
+             {{clientes.length| i18nPlural:clientesMapa }} 
         </p-fieldset>
     </div>
 </div>

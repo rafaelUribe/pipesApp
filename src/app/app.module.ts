@@ -20,8 +20,8 @@ registerLocaleData( localFr )
     AppComponent,
   ],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     AppRouterModule,
     VentasModule,
