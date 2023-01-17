@@ -7,15 +7,18 @@ import { Heroe } from '../interface/ventas.interface';
 export class OrdenarPipe implements PipeTransform {
 
   transform(heroes: Heroe[], orderPor: string = 'sin valor' ): Heroe[] {
-    if(orderPor === 'nombre') {
-      heroes = heroes.sort((a,b) => (a.nombre > b.nombre) ? 1 : -1)
-    } else if(orderPor === 'vuela') {
-      heroes = heroes.sort((a,b) => (a.vuela) ? 1 : -1)
-    } else if(orderPor === 'color'){
-      heroes = heroes.sort((a,b) => (a.color > b.color) ? 1 : -1)
+
+    switch(orderPor) {
+      case 'nombre':
+        return heroes.sort((a,b) => (a.nombre > b.nombre) ? 1 : -1);
+      case 'vuela':
+        return heroes = heroes.sort((a,b) => (a.vuela) ? -1 : 1);
+      case 'color':
+        return heroes = heroes.sort((a,b) => (a.color > b.color) ? 1 : -1)
+      default:
+        return heroes;
     }
 
-    return heroes
   }
 
 }
