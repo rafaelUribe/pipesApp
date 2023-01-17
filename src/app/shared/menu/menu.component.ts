@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import {MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-menu',
@@ -30,13 +30,15 @@ export class MenuComponent implements OnInit {
             label: 'No comunes',
             icon: 'pi pi-glon',
             routerLink: 'no-comunes'
-          }
+          },
+
         ]
       }
       ,
       {
         label: 'Pipes personalizados',
-        icon: 'pi pi-conf'
+        icon: 'pi pi-conf',
+        routerLink: 'ordenar',
       }
     ];
   }

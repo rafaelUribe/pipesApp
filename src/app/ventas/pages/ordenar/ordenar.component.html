@@ -1,1 +1,102 @@
-<p>ordenar works!</p>
+<div class="grid justify-content-center">
+    <div class="sm:w-12 md:w-12 lg:w-12 xl:w-8">
+        <div class="text-layout">
+            <h1>DecimalPipe y Porcentaje</h1>
+            <p>
+                Pipes creados por {{'nosotros' | mayusculas:enMayusculas }}
+            </p>
+        
+        
+            <p-toolbar>
+                <div class="p-toolbar-group-start w-full">
+                    <div class="grid">
+                        <div class="col-12 sm:col-12">
+                            <button 
+                                pButton
+                                label="toggle mayúsculas"
+                                (click)="cambiar()"
+                                class="
+                                    mr-1
+                                    p-button-warning
+                                    w-full
+                                "    
+                            >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-toolbar-group-end w-full justify-content-center">
+                    <div class="grid w-full justify-content-end">
+                        <div class="col-12 sm:col-12 md:col-3 lg:col-2">
+                            <button
+                                pButton
+                                icon="pi pi-sort"
+                                label="Nombre"
+                                class="
+                                    mr-1
+                                    w-full
+                                "
+                                (click)="cambiarOrden('nombre')"
+                            >
+                            </button>
+                        </div>
+                        <div class="col-12 sm:col-12 md:col-3 lg:col-2">
+                            <button
+                                pButton
+                                icon="pi pi-sort"
+                                label="Vuela"
+                                class="
+                                    mr-1
+                                    p-button-success
+                                    w-full
+                                "            
+                                (click)="cambiarOrden('vuela')"
+                            >
+                            </button>
+                        </div>
+                        <div class="col-12 sm:col-12 md:col-3 lg:col-2">
+                            <button
+                                pButton
+                                icon="pi pi-sort"
+                                label="Color"
+                                class="
+                                    mr-1
+                                    p-button-help
+                                    w-full
+                                "
+                                (click)="cambiarOrden('color')"            
+                            >
+                            </button>
+                        </div>
+                    </div>
+        
+                </div>
+            </p-toolbar>
+        
+        
+        </div>
+        
+        <div class="grid">
+            <div class="col mt-2">
+                <p-table [value]="heroes | ordenar:ordenarPor ">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Vuela</th>
+                            <th>Color</th>
+        
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-heroes>
+                        <tr>
+                            <td>{{ heroes.nombre }}</td>
+                            <td>{{ (heroes.vuela | vuela) | titlecase }}</td>
+                            <td>{{ heroes.color }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    
+    </div>
+</div>
